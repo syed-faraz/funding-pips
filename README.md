@@ -32,6 +32,7 @@
 ```bash
 docker-compose up -d --build
 ```
+![alt text](https://github.com/syed-faraz/funding-pips/blob/main/image.png)
 
 ### Check Logs
 ```bash
