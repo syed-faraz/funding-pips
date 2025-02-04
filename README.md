@@ -1,15 +1,15 @@
 # 🚀 funding-pips
 
 ## 📌 Ruby Version
-- **Ruby:** `3.x.x` (Specify exact version, e.g., `3.1.2`)
-- **Rails:** `7.x.x` (Specify version, e.g., `7.0.4`)
+- **Ruby:** `3.2`
+- **Rails:** `7.0.4`
 
 ---
 
 ## ⚙️ System Dependencies
-- **Docker** (`>= 20.x.x`)
-- **Docker Compose** (`>= 2.x.x`)
-- **PostgreSQL** (`>= 13`)
+- **Docker** (`27.4.0`)
+- **Docker Compose** (`3.8`)
+- **PostgreSQL** (`15`)
 
 ---
 
@@ -17,7 +17,7 @@
 **Clone the repository:**
    ```bash
    git clone https://github.com/syed-faraz/funding-pips.git
-   cd your-app
+   cd funding-pips
    ```
 
 **Ensure the following ENV variables are set properly inside the docker-compose.yaml file:**
@@ -32,6 +32,12 @@
 ```bash
 docker-compose up -d --build
 ```
+
+![alt text](image.png)
+
+![alt text](image-1.png)
+
+![alt text](image-2.png)
 
 ### Check Logs
 ```bash
