@@ -1,34 +1,52 @@
-# README
+# 🚀 funding-pips
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 📌 Ruby Version
+- **Ruby:** `3.x.x` (Specify exact version, e.g., `3.1.2`)
+- **Rails:** `7.x.x` (Specify version, e.g., `7.0.4`)
 
-Things you may want to cover:
+---
 
-* Ruby version
+## ⚙️ System Dependencies
+- **Docker** (`>= 20.x.x`)
+- **Docker Compose** (`>= 2.x.x`)
+- **PostgreSQL** (`>= 13`)
 
-* System dependencies
+---
 
-* Configuration
+## 🛠 Configuration
+**Clone the repository:**
+   ```bash
+   git clone https://github.com/syed-faraz/funding-pips.git
+   cd your-app
+   ```
 
-* Database creation
+**Ensure the following ENV variables are set properly inside the docker-compose.yaml file:**
+   ```ini
+   RAILS_ENV=production
+   DATABASE_URL=postgres://postgres:password@db:5432/fundingpips
+   ```
 
-* Database initialization
+---
 
-* How to run the test suite
+### Build the Docker Image and Start the Containers
+```bash
+docker-compose up -d --build
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+### Check Logs
+```bash
+docker-compose logs -f
+```
 
-* Deployment instructions
+### Stopping Services
+```bash
+docker-compose down
+```
 
-* ...
-
-# funding-pips
-
-Here's a best practice `Dockerfile` for a Ruby on Rails application. It focuses on security, performance, and efficient dependency management.
+---
 
 ### Explanation of Best Practices:
-1. **Use a Minimal Base Image**: The official `ruby:3.2` image is used to ensure compatibility.
+1. **Use a Minimal Base Image**: The official `ruby:3.2-slim` image is used to ensure compatibility.
 2. **Set Environment Variables**: Optimizes performance and prevents unnecessary dependencies.
 3. **Use a Working Directory**: Ensures commands execute in the correct application directory.
 4. **Install Dependencies Efficiently**: Uses `apt-get` with `--no-install-recommends` to minimize installed packages.
@@ -36,4 +54,6 @@ Here's a best practice `Dockerfile` for a Ruby on Rails application. It focuses 
 6. **Precompile Assets**: Reduces container startup time.
 7. **Expose Only Necessary Ports**: Ensures security.
 8. **Use an EntryPoint Script**: Simplifies initialization tasks.
-9. **Run the App Using `puma`**: A better choice than `rails server` for production.
+9. **Create a non-root-user**: Improves security by running the app as a non root user.
+10. **Run the App Using `puma`**: A better choice than `rails server` for production.
+

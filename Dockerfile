@@ -1,4 +1,4 @@
-# Use an official Ruby base image
+# Use an official light Ruby base image
 FROM ruby:3.2-slim
 
 # Set environment variables
@@ -43,9 +43,9 @@ COPY docker-entrypoint.sh /usr/bin/
 RUN chmod +x /usr/bin/docker-entrypoint.sh
 ENTRYPOINT ["/usr/bin/docker-entrypoint.sh"]
 
-# # Create a non-root user for security
-# RUN useradd -m appuser && chown -R appuser:appuser /$APP_HOME
-# USER appuser
+# Create a non-root user for security
+RUN useradd -m appuser && chown -R appuser:appuser /$APP_HOME
+USER appuser
 
 # Command to run the application
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
