@@ -20,8 +20,11 @@
    cd funding-pips
    ```
 
-**Ensure the following ENV variables are set properly inside the docker-compose.yaml file:**
+**Ensure the following ENV variables are set properly inside .env file:**
    ```ini
+   POSTGRES_USER=postgres
+   POSTGRES_PASSWORD=password
+   POSTGRES_DB=fundingpips
    RAILS_ENV=production
    DATABASE_URL=postgres://postgres:password@db:5432/fundingpips
    ```

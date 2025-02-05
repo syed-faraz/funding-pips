@@ -5,8 +5,8 @@ services:
     depends_on:
       - db
     environment:
-      RAILS_ENV: production
-      DATABASE_URL: postgres://postgres:password@db:5432/fundingpips
+      RAILS_ENV: ${RAILS_ENV}
+      DATABASE_URL: ${DATABASE_URL}
     volumes:
       - .:/app
     ports:
@@ -18,9 +18,9 @@ services:
     image: postgres:15
     container_name: postgres_db
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: password
-      POSTGRES_DB: fundingpips
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     volumes:
       - postgres_data:/var/lib/postgresql/data
     ports:
