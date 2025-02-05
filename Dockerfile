@@ -1,5 +1,5 @@
 # Use an official light Ruby base image
-FROM ruby:3.2-slim
+FROM ruby:3.2
 
 # Set environment variables
 ENV RAILS_ENV=production \
@@ -26,8 +26,8 @@ RUN gem install bundler -v "$BUNDLER_VERSION"
 
 # Copy Gemfile and Gemfile.lock first to leverage Docker caching
 COPY Gemfile Gemfile.lock ./
-RUN bundler install
-RUN bundle install
+RUN bundle install --verbose
+
 # Copy the rest of the application code
 COPY . .
 

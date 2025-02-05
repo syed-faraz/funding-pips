@@ -52,7 +52,7 @@ docker-compose down
 ---
 
 ### Explanation of Best Practices:
-1. **Use a Minimal Base Image**: The official `ruby:3.2-slim` image is used to ensure compatibility.
+1. **Use a Minimal Base Image**: The official `ruby:3.2` image is used to ensure compatibility.
 2. **Set Environment Variables**: Optimizes performance and prevents unnecessary dependencies.
 3. **Use a Working Directory**: Ensures commands execute in the correct application directory.
 4. **Install Dependencies Efficiently**: Uses `apt-get` with `--no-install-recommends` to minimize installed packages.
