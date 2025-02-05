@@ -81,6 +81,8 @@ Rails.application.configure do
 
   config.hosts << "web"
   config.hosts << "0.0.0.0"
+  config.hosts << "funding_pips_app"
+  config.hosts << "localhost"
 
   # Enable DNS rebinding protection and other `Host` header attacks.
   # config.hosts = [
